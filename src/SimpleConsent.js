@@ -279,23 +279,17 @@ class SimpleConsent {
     /**
      * Services
      * 
-     * An array of service objects that the website uses. 
+     * An object of service objects that the website uses. 
      * Each service object should have the following properties:
      * 
-     * @property {string} name - The name of the service.
-     * @property {string} description - A short description of the service.
-     * @property {Array<Object>} cookies - An array of cookie objects that the service uses. 
-     * @property {Array<string>} types - An array of consent type keys that the service uses:
-     *   - `necessary`
-     *   - `analytics_storage`
-     *   - `ad_storage`
-     *   - `ad_personalization`
-     *   - `ad_user_data`
-     *   - `functionality_storage`
-     *   - `personalization_storage`
-     *   - `security_storage`
+     * @property {Object} services - The services object.
+     * @property {Object} services.<service_key> - The settings for a given service.
+     * @property {Object} services.<service_key>.name - The name of the service.
+     * @property {Object} services.<service_key>.description - A short description of the service.
+     * @property {Object} services.<service_key>.storage - An object containing the various storage (cookies etc..) for the service.
+     * @property {Array<string>} services.<service_key>.types - An array of consent type keys that the service uses:
      * 
-     * @default []
+     * @default {}
      */
     services: {},
 
