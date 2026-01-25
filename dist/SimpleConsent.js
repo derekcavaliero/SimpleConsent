@@ -765,7 +765,7 @@ class SimpleConsent {
       this.save(true);
 
       removeEventListeners();
-    }
+    };
 
     const debounce = (func, wait) => {
       
@@ -776,7 +776,7 @@ class SimpleConsent {
         timeout = setTimeout(() => func.apply(this, args), wait);
       };
 
-    }
+    };
 
     const acceptOnScroll = (e) => {
 
@@ -785,7 +785,7 @@ class SimpleConsent {
 
       consentToAll();
 
-    }
+    };
   
     const debouncedAcceptOnScroll = debounce(acceptOnScroll, 100);
 
@@ -799,14 +799,14 @@ class SimpleConsent {
 
       consentToAll();
 
-    }
+    };
 
     if (this.#config.consentOn.includes('click'))
       document.addEventListener('mousedown', acceptOnBodyClick);
 
     const acceptOnClose = (e) => {
       consentToAll();
-    }
+    };
 
     if (this.#config.consentOn.includes('banner.close'))
       document.addEventListener(`${this.#_namespace}:banner.close.after`, acceptOnClose);
@@ -815,7 +815,7 @@ class SimpleConsent {
       document.removeEventListener('mousedown', acceptOnBodyClick);
       document.removeEventListener(`${this.#_namespace}:banner.close.after'`, acceptOnClose);
       document.removeEventListener('scroll', acceptOnScroll);
-    }
+    };
 
   }
 
@@ -926,7 +926,7 @@ class SimpleConsent {
     window.dataLayer = window.dataLayer || [];
 
     if (! window.gtag)
-      window.gtag = function() { window.dataLayer.push(arguments); }
+      window.gtag = function() { window.dataLayer.push(arguments); };
 
   }
 
@@ -942,7 +942,7 @@ class SimpleConsent {
     
       var f=d.getElementsByTagName(s)[0],
           j=d.createElement(s),
-          dl=l!='dataLayer'?'&l='+l:'';
+          dl='';
     
       j.async=true;
       j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;
@@ -1284,7 +1284,7 @@ class SimpleConsent {
       if (target.closest('[data-consent-tpl="modal"]') && this.#config.ui.showBranding) {
         let a = document.createElement('a');
         a.setAttribute('data-consent-branding', '');
-        a.href = 'https://github.com/WebMechanix/SimpleConsent/';
+        a.href = 'https://github.com/derekcavaliero/SimpleConsent/';
         a.target = '_blank';
         a.textContent = `${this.#class}`;
         target.appendChild(a);
@@ -1412,7 +1412,7 @@ class SimpleConsent {
     if (['cookie', 'hybrid'].includes(this.#config.storageMethod))
       document.cookie = `${this.#config.storageName}=${JSON.stringify(data)}; expires=${new Date(Date.now() + (this.#config.cookieExpiryDays * 24 * 60 * 60 * 1000)).toUTCString()}; path=/; domain=${this.#config.cookieDomain}`;
 
-    if (['cookie', 'hybrid'].includes(this.#config.storageMethod))
+    if (['localstorage', 'hybrid'].includes(this.#config.storageMethod))
       localStorage.setItem(this.#config.storageName, JSON.stringify(data));
   }
 
@@ -1514,7 +1514,7 @@ class SimpleConsent {
         });
       }
 
-      let status = input.checked ? 'granted' : 'denied';
+      input.checked ? 'granted' : 'denied';
       this.#emit(`${input.name}.${this.#boolToStatus(input.checked)}`);
 
     }
@@ -1564,18 +1564,29 @@ class SimpleConsent {
 
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-
-  const script = document.querySelector('script[data-consent-config]');
-
-  if (! script) 
-    return;
-
-  let config = window[script.dataset.consentConfig] || {};
-
-  new SimpleConsent(config);
-
-  // Clean up the global namespace
-  delete window[script.dataset.consentConfig];
+// Auto-boot behavior: only run when loaded as a script tag (not when imported as a module)
+// This allows the library to work both as a script tag and as an ES module
+// When imported as a module, users can manually initialize: `new SimpleConsent(config)`
+// When loaded as a script tag, it will auto-boot if a script tag with data-consent-config exists
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
   
-});
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // Only auto-boot if we find a script tag with data-consent-config
+    // This script tag won't exist when the library is imported as a module
+    const script = document.querySelector('script[data-consent-config]');
+
+    if (! script) 
+      return;
+
+    let config = window[script.dataset.consentConfig] || {};
+
+    new SimpleConsent(config);
+
+    delete window[script.dataset.consentConfig];
+    
+  });
+
+}
+
+export { SimpleConsent, SimpleConsent as default };

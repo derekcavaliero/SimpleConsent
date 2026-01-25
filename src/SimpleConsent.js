@@ -1284,7 +1284,7 @@ class SimpleConsent {
       if (target.closest('[data-consent-tpl="modal"]') && this.#config.ui.showBranding) {
         let a = document.createElement('a');
         a.setAttribute('data-consent-branding', '');
-        a.href = 'https://github.com/WebMechanix/SimpleConsent/';
+        a.href = 'https://github.com/derekcavaliero/SimpleConsent/';
         a.target = '_blank';
         a.textContent = `${this.#class}`;
         target.appendChild(a);
@@ -1582,7 +1582,7 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
     let config = window[script.dataset.consentConfig] || {};
 
     new SimpleConsent(config);
-    
+
     delete window[script.dataset.consentConfig];
     
   });
