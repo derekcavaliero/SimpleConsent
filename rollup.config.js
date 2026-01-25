@@ -15,22 +15,6 @@ const __dirname = dirname(__filename);
 const packageJson = JSON.parse(readFileSync(join(__dirname, 'package.json'), 'utf8'));
 const packageVersion = packageJson.version;
 
-// Post-build plugin to fix newlines in minified JS
-const fixMinifiedNewlines = () => ({
-	name: 'fix-minified-newlines',
-	writeBundle() {
-		if (isProduction) {
-			const jsPath = `dist/${library}.min.js`;
-			try {
-				let jsContent = readFileSync(jsPath, 'utf8');
-				jsContent = jsContent.replace(/\\n\s+/g, '');
-				writeFileSync(jsPath, jsContent);
-			} catch (error) {
-				console.warn(`Could not fix newlines in ${jsPath}:`, error.message);
-			}
-		}
-	}
-});
 
 // Plugin to copy files to testbench/assets
 const copyToTestbench = () => ({
@@ -82,7 +66,7 @@ const minifyCss = () => ({
 });
 
 export default [
-	// JavaScript build - unminified
+	// ES Module build - unminified (for bundlers)
 	{
 		input: `src/${library}.js`,
 		output: {
@@ -101,7 +85,7 @@ export default [
 			minifyCss()
 		]
 	},
-	// JavaScript build - minified (production only)
+	// ES Module build - minified (production only)
 	...(isProduction ? [{
 		input: `src/${library}.js`,
 		output: {
@@ -117,8 +101,7 @@ export default [
 				compress: {
 					drop_console: true
 				}
-			}),
-			fixMinifiedNewlines()
+			})
 		]
 	}] : [])
 ];

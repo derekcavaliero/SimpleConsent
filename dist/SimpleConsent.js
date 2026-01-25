@@ -1587,6 +1587,9 @@ if (typeof window !== 'undefined' && typeof document !== 'undefined') {
     
   });
 
+  if (! window.SimpleConsent)
+    window.SimpleConsent = SimpleConsent;
+
 }
 
 export { SimpleConsent, SimpleConsent as default };
