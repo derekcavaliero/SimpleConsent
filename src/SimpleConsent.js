@@ -1233,8 +1233,8 @@ class SimpleConsent {
         for (let service of services[typeKey]) {
           let serviceTpl = this.#parseTemplate('service', service);
           
-          if (this.#config.ui.showServiceLogos)
-            serviceTpl.style.setProperty('--consent-service-logo-url', `url(https://logo.clearbit.com/${service.domain}?size=48)`);
+          //if (this.#config.ui.showServiceLogos)
+            //serviceTpl.style.setProperty('--consent-service-logo-url', `url(https://logo.clearbit.com/${service.domain}?size=48)`);
 
           servicesTarget.appendChild(serviceTpl);
         }

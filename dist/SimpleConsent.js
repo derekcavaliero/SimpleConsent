@@ -3,7 +3,7 @@
  * 
  * Author: Derek Cavaliero (@derekcavaliero)
  * Repository: https://github.com/derekcavaliero/SimpleConsent
- * Version: 1.0.0-alpha
+ * Version: 1.0.0-alpha.2
  * License: MIT
  */
 class SimpleConsent {
@@ -13,7 +13,7 @@ class SimpleConsent {
   #_geo = null;
   #_multiConfig = null;
   #_namespace = 'simple-consent';
-  #_version = '1.0.0-alpha';
+  #_version = '1.0.0-alpha.2';
   
   /**
    * A list of actions that are available to the user through the use of buttons added to the consent UI.
@@ -1233,8 +1233,8 @@ class SimpleConsent {
         for (let service of services[typeKey]) {
           let serviceTpl = this.#parseTemplate('service', service);
           
-          if (this.#config.ui.showServiceLogos)
-            serviceTpl.style.setProperty('--consent-service-logo-url', `url(https://logo.clearbit.com/${service.domain}?size=48)`);
+          //if (this.#config.ui.showServiceLogos)
+            //serviceTpl.style.setProperty('--consent-service-logo-url', `url(https://logo.clearbit.com/${service.domain}?size=48)`);
 
           servicesTarget.appendChild(serviceTpl);
         }
