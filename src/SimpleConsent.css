@@ -132,6 +132,9 @@
   right: var(--consent-banner-offset);
 }
 
+[data-consent-tpl="settingsButton"][data-consent-placement*="left"]{ right: auto; }
+[data-consent-tpl="settingsButton"][data-consent-placement*="right"]{ left: auto; }
+
 /* ----------------------------------------------
  * Buttons / Actions
  * ---------------------------------------------- */
