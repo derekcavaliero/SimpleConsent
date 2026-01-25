@@ -1412,7 +1412,7 @@ class SimpleConsent {
     if (['cookie', 'hybrid'].includes(this.#config.storageMethod))
       document.cookie = `${this.#config.storageName}=${JSON.stringify(data)}; expires=${new Date(Date.now() + (this.#config.cookieExpiryDays * 24 * 60 * 60 * 1000)).toUTCString()}; path=/; domain=${this.#config.cookieDomain}`;
 
-    if (['cookie', 'hybrid'].includes(this.#config.storageMethod))
+    if (['localstorage', 'hybrid'].includes(this.#config.storageMethod))
       localStorage.setItem(this.#config.storageName, JSON.stringify(data));
   }
 
@@ -1564,18 +1564,31 @@ class SimpleConsent {
 
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-
-  const script = document.querySelector('script[data-consent-config]');
-
-  if (! script) 
-    return;
-
-  let config = window[script.dataset.consentConfig] || {};
-
-  new SimpleConsent(config);
-
-  // Clean up the global namespace
-  delete window[script.dataset.consentConfig];
+// Auto-boot behavior: only run when loaded as a script tag (not when imported as a module)
+// This allows the library to work both as a script tag and as an ES module
+// When imported as a module, users can manually initialize: `new SimpleConsent(config)`
+// When loaded as a script tag, it will auto-boot if a script tag with data-consent-config exists
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
   
-});
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // Only auto-boot if we find a script tag with data-consent-config
+    // This script tag won't exist when the library is imported as a module
+    const script = document.querySelector('script[data-consent-config]');
+
+    if (! script) 
+      return;
+
+    let config = window[script.dataset.consentConfig] || {};
+
+    new SimpleConsent(config);
+    
+    delete window[script.dataset.consentConfig];
+    
+  });
+
+}
+
+// Export for ES modules
+export default SimpleConsent;
+export { SimpleConsent };
