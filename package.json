@@ -1,6 +1,6 @@
 {
   "name": "@derekcavaliero/simple-consent",
-  "version": "1.0.0",
+  "version": "1.0.0-alpha",
   "description": "Most consent/cookie banners are too bloated and try to be \"everything to everyone\" - SimpleConsent is hyperfocused on ease of use, particularly with Google Tag Manager's \"Consent\" APIs.",
   "type": "module",
   "main": "./dist/SimpleConsent.js",
