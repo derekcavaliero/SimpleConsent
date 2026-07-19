@@ -683,6 +683,7 @@ function logTag(tag) {
           'Default' : {
             services,
             types,
+            l10n,
           },
           'CCPA' : {
             "actions": {
@@ -706,6 +707,7 @@ function logTag(tag) {
             },
             services,
             types,
+            l10n,
           },
           "Multi-Config": {
             "_default": {
@@ -789,6 +791,7 @@ function logTag(tag) {
               },
               services,
               types,
+              l10n,
             },
             "_router": [
               {
