@@ -1,12 +1,12 @@
 :root{
-  --consent-color-body: #1e293b;
-  --consent-color-primary: #2563eb;
-  --consent-color-primary-hover: #1d4ed8;
-  --consent-color-secondary: #64748b;
-  --consent-color-secondary-hover: #1e293b;
+  --consent-color-body: #3f3f46;
+  --consent-color-primary: #27272a;
+  --consent-color-primary-hover: #09090b;
+  --consent-color-secondary: #71717a;
+  --consent-color-secondary-hover: #3f3f46;
   --consent-color-secondary-focus-shadow-rgb: 130,138,145;
-  --consent-color-light-grey: #f1f5f9;
-  --consent-color-success: #46B756;
+  --consent-color-light-grey: #f4f4f5;
+  --consent-color-success: #22c55e;
   --consent-color-warning: #b45309;
 
   --consent-background-color: #fff;
@@ -275,7 +275,7 @@
   transition: all 0.2s ease-in-out;
   border: var(--consent-border);
   background: #fff !important;
-  color: #826754 !important;
+  color: var(--consent-color-primary) !important;
   box-shadow: var(--consent-box-shadow) !important;
 }
 [data-consent-tpl="settingsButton"][data-consent-action]:hover,
@@ -283,8 +283,8 @@
   transform: scale(1.1);
 }
 [data-consent-tpl="settingsButton"][data-consent-action] svg{
-  width: 2.25rem;
-  height: 2.25rem;
+  width: 2rem;
+  height: 2rem;
 }
 
 /* ----------------------------------------------

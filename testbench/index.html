@@ -165,7 +165,7 @@ dataLayer = window.dataLayer || [];
         <template x-for="(tag, index) in $store.log.tags" :key="index" x-cloak>
           <div :data-tag-id="tag.id" :data-tag-key="tag.key" :class="{ 'animate:pulse': pulsingTags.has(tag.key) }" class="card p-3 mt-2 flex-row align-items-center justify-content-between lh-1 small">
             <div class=" d-flex gap-2 align-items-center text-muted mr-auto">
-              <span x-text="tag.totalFired" class="badge text-bg-primary"></span>
+              <span x-text="tag.totalFired" class="badge px-2 text-bg-secondary"></span>
               <sprite-icon symbol="tag-fill"></sprite-icon>
               <span x-text="tag.name" class="font-monospace"></span>
             </div>
@@ -213,7 +213,7 @@ dataLayer = window.dataLayer || [];
             Alpine.store('app').setConsoleValue('config', $store.app.configs.resolved);
           });
         })"></div>
-        <code class="position-absolute top-0 end-0 m-3 font-monospace bg-zinc-900 fw-medium small px-2 py-1 rounded-1" x-text="label"></code>
+        <code class="position-absolute top-0 end-0 m-3 font-monospace bg-zinc-900 fw-medium small px-2 py-1" x-text="label"></code>
     </div>
     <div x-data="{label: 'dataLayer'}" class="h-50 position-relative overflow-hidden border-bottom border-2 border-dark">
       <div 
@@ -224,8 +224,8 @@ dataLayer = window.dataLayer || [];
             Alpine.store('app').setConsoleValue(label, $store.app.dataLayer);
           });
         })"></div>
-      <code class="position-absolute top-0 end-0 m-3 font-monospace bg-zinc-900 fw-medium small px-2 py-1 rounded-1" x-text="label"></code>
-      <a href="./assets/GTM-testbench-default.json" download class="position-absolute bottom-0 end-0 m-3 btn btn-secondary d-inline-flex gap-2 align-items-center">
+      <code class="position-absolute top-0 end-0 m-3 font-monospace bg-zinc-900 fw-medium small px-2 py-1" x-text="label"></code>
+      <a href="./assets/GTM-testbench-default.json" download class="position-absolute bottom-0 end-0 m-3 btn btn-light d-inline-flex gap-2 align-items-center">
         <sprite-icon symbol="gtm"></sprite-icon>
         Download Testbench Container
       </a>
