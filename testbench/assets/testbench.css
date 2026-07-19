@@ -68,10 +68,32 @@ body {
 }
 
 .brand-icon{
+  position: relative;
+  height: 2.75rem;
+  display: inline-flex;
+  align-items: center;
+}
+.brand-icon::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0.5;
+  height: 100%;
+  width: 100%;
+  border-radius: 0;
+  box-shadow: none;
+  background-size: cover;
+  background-image: url(ios-icon-mask-border.svg);
+  z-index: 2;
+}
+
+.brand-icon svg{
+  z-index: 1;
   height: 2.75rem;
 }
 
-.brand-icon{
+.brand-icon svg{
   mask-image: url(ios-icon-mask.svg);
   mask-size: cover;
 }

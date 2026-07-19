@@ -3,7 +3,7 @@
  * 
  * Author: Derek Cavaliero (@derekcavaliero)
  * Repository: https://github.com/derekcavaliero/SimpleConsent
- * Version: 1.0.alpha
+ * Version: {{package.version}}
  * License: MIT
  */
 class SimpleConsent {
@@ -13,7 +13,7 @@ class SimpleConsent {
   #_geo = null;
   #_multiConfig = null;
   #_namespace = 'simple-consent';
-  #_version = 1.0;
+  #_version = '{{package.version}}';
   
   /**
    * A list of actions that are available to the user through the use of buttons added to the consent UI.
@@ -279,23 +279,17 @@ class SimpleConsent {
     /**
      * Services
      * 
-     * An array of service objects that the website uses. 
+     * An object of service objects that the website uses. 
      * Each service object should have the following properties:
      * 
-     * @property {string} name - The name of the service.
-     * @property {string} description - A short description of the service.
-     * @property {Array<Object>} cookies - An array of cookie objects that the service uses. 
-     * @property {Array<string>} types - An array of consent type keys that the service uses:
-     *   - `necessary`
-     *   - `analytics_storage`
-     *   - `ad_storage`
-     *   - `ad_personalization`
-     *   - `ad_user_data`
-     *   - `functionality_storage`
-     *   - `personalization_storage`
-     *   - `security_storage`
+     * @property {Object} services - The services object.
+     * @property {Object} services.<service_key> - The settings for a given service.
+     * @property {Object} services.<service_key>.name - The name of the service.
+     * @property {Object} services.<service_key>.description - A short description of the service.
+     * @property {Object} services.<service_key>.storage - An object containing the various storage (cookies etc..) for the service.
+     * @property {Array<string>} services.<service_key>.types - An array of consent type keys that the service uses:
      * 
-     * @default []
+     * @default {}
      */
     services: {},
 
@@ -1239,8 +1233,8 @@ class SimpleConsent {
         for (let service of services[typeKey]) {
           let serviceTpl = this.#parseTemplate('service', service);
           
-          if (this.#config.ui.showServiceLogos)
-            serviceTpl.style.setProperty('--consent-service-logo-url', `url(https://logo.clearbit.com/${service.domain}?size=48)`);
+          //if (this.#config.ui.showServiceLogos)
+            //serviceTpl.style.setProperty('--consent-service-logo-url', `url(https://logo.clearbit.com/${service.domain}?size=48)`);
 
           servicesTarget.appendChild(serviceTpl);
         }
@@ -1290,7 +1284,7 @@ class SimpleConsent {
       if (target.closest('[data-consent-tpl="modal"]') && this.#config.ui.showBranding) {
         let a = document.createElement('a');
         a.setAttribute('data-consent-branding', '');
-        a.href = 'https://github.com/WebMechanix/SimpleConsent/';
+        a.href = 'https://github.com/derekcavaliero/SimpleConsent/';
         a.target = '_blank';
         a.textContent = `${this.#class}`;
         target.appendChild(a);
@@ -1418,7 +1412,7 @@ class SimpleConsent {
     if (['cookie', 'hybrid'].includes(this.#config.storageMethod))
       document.cookie = `${this.#config.storageName}=${JSON.stringify(data)}; expires=${new Date(Date.now() + (this.#config.cookieExpiryDays * 24 * 60 * 60 * 1000)).toUTCString()}; path=/; domain=${this.#config.cookieDomain}`;
 
-    if (['cookie', 'hybrid'].includes(this.#config.storageMethod))
+    if (['localstorage', 'hybrid'].includes(this.#config.storageMethod))
       localStorage.setItem(this.#config.storageName, JSON.stringify(data));
   }
 
@@ -1570,18 +1564,34 @@ class SimpleConsent {
 
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-
-  const script = document.querySelector('script[data-consent-config]');
-
-  if (! script) 
-    return;
-
-  let config = window[script.dataset.consentConfig] || {};
-
-  new SimpleConsent(config);
-
-  // Clean up the global namespace
-  delete window[script.dataset.consentConfig];
+// Auto-boot behavior: only run when loaded as a script tag (not when imported as a module)
+// This allows the library to work both as a script tag and as an ES module
+// When imported as a module, users can manually initialize: `new SimpleConsent(config)`
+// When loaded as a script tag, it will auto-boot if a script tag with data-consent-config exists
+if (typeof window !== 'undefined' && typeof document !== 'undefined') {
   
-});
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // Only auto-boot if we find a script tag with data-consent-config
+    // This script tag won't exist when the library is imported as a module
+    const script = document.querySelector('script[data-consent-config]');
+
+    if (! script) 
+      return;
+
+    let config = window[script.dataset.consentConfig] || {};
+
+    new SimpleConsent(config);
+
+    delete window[script.dataset.consentConfig];
+    
+  });
+
+  if (! window.SimpleConsent)
+    window.SimpleConsent = SimpleConsent;
+
+}
+
+// Export for ES modules
+export default SimpleConsent;
+export { SimpleConsent };
