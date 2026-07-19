@@ -10,13 +10,9 @@ dataLayer = window.dataLayer || [];
 </script>
 
 <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🧪</text></svg>">
-<link rel="preconnect" href="https://use.typekit.net">
-<link rel="preconnect" href="https://fonts.bunny.net">
 <link rel="preconnect" href="https://cdn.jsdelivr.net">
 
 <!-- Styles -->
-<link rel="stylesheet" href="https://use.typekit.net/dlq7tmk.css">
-<link rel="stylesheet" href="https://fonts.bunny.net/css?family=fira-code:400,500">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/ace-builds@1.35.4/css/ace.min.css">
 <link rel="stylesheet" href="./assets/testbench.css">
@@ -36,61 +32,16 @@ dataLayer = window.dataLayer || [];
   
   <div class="w-100 vh-100 mx-auto overflow-auto" data-testbench-html>
 
-    <header data-testbench-header class="position-sticky z-3 top-0 start-0 end-0 p-3 shadow-sm border-bottom border-secondary-subtle bg-white">
+    <header data-testbench-header class="position-sticky z-3 top-0 start-0 end-0 p-3 border-bottom border-secondary-subtle bg-white">
       <form data-testbench-controls x-data class="d-flex align-items-center justify-content-between gap-3">
         
         <h1 class="brand d-flex align-items-center gap-3 my-0 fw:800 lh-sm">
-          <div class="brand-icon aspect:1/1">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              xmlns:xlink="http://www.w3.org/1999/xlink"
-              viewBox="0 0 512 512"
-              class="aspect:1/1"
-            >
-              <defs>
-                <style>
-                  .gradient\:optimistic\/daydream {
-                    fill: url(#gradient-optimistic-daydream);
-                  }
-                  .gradient\:midnight\/discovery {
-                    fill: url(#gradient-midnight-discovery);
-                  }
-                </style>
-                <linearGradient 
-                  id="gradient-midnight-discovery" 
-                  x1="-46.26" 
-                  y1="430.51" 
-                  x2="558.26" 
-                  y2="81.49" 
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop offset="0" stop-color="#024"/>
-                  <stop offset="1" stop-color="#072d56"/>
-                </linearGradient>
-                <linearGradient
-                  id="gradient-optimistic-daydream"
-                  x1="-46.26"
-                  y1="430.51"
-                  x2="558.26"
-                  y2="81.49"
-                  gradientUnits="userSpaceOnUse"
-                >
-                  <stop offset="0" stop-color="#009fd4" />
-                  <stop offset="1" stop-color="#46b756" />
-                </linearGradient>
-              </defs>
-              <rect
-                class="gradient:optimistic/daydream"
-                x=".5"
-                y=".5"
-                width="511"
-                height="511"
-              />
-              <path d="m511,1v510H1V1h510m1-1H0v512h512V0h0Z" />
-              <path
-                fill="#ffffff"
-                d="m411.76,131.04c-3.31-4.61-8.39-8.19-13.99-9.73l.76.26c-17.29-6.15-65.86-9.47-113.67-10.24h-64.08c-45.77,1.28-90.79,4.35-107.57,10.24l.76-.26c-5.59,1.54-10.68,5.12-13.99,9.73-12.97,17.93-13.99,97.82-13.99,121.89v5.89c0,24.33,1.02,104.22,14.24,121.89,3.31,4.61,8.39,8.2,13.99,9.73l-.76-.25c20.85,7.17,86.46,10.5,142.15,10.5h.76c55.69,0,121.3-3.33,142.15-10.5l-.76.25c5.59-1.54,10.68-5.12,13.99-9.73,13.22-17.67,14.24-97.82,14.24-121.89v-5.89c0-24.07-1.02-103.97-14.24-121.89Zm-12.03,129.79c0,58.45-4.81,95.72-8.36,103.89l-.25.25c-12.67,4.34-63.6,9.19-133.02,9.19h-1.01c-21.03,0-40.29-.51-57.52-1.28-2.53-2.81-5.07-5.61-7.6-7.91,1.01-3.06,2.03-6.13,2.79-9.19.76-3.06,1.27-6.38,1.27-9.44,5.07-1.28,10.39-3.06,15.46-5.11-.25-3.06-.25-6.13-.76-9.19-5.32-1.53-10.64-2.55-16.22-3.32-.76-3.06-1.77-6.13-2.79-9.19-1.27-2.81-2.53-5.87-4.31-8.42,3.55-4.34,6.84-8.68,9.63-13.53-1.77-2.55-3.8-4.85-5.83-6.89-5.32,1.79-10.39,4.34-14.95,7.15-2.28-2.04-4.81-4.08-7.6-5.62-2.53-1.79-5.57-3.06-8.36-4.34.51-5.36.51-10.98,0-16.59-2.79-.77-5.57-1.53-8.61-2.04-3.04,4.85-5.83,9.7-8.11,14.8-3.04-.26-6.08-.26-9.37,0-3.04.51-6.08.77-9.12,1.79-2.79-4.85-6.08-9.44-9.38-13.53-.25,0-.51.26-.76.26v-13.62c0-61.35,4.81-100.47,8.36-109.05h.25c12.67-4.55,63.6-9.65,133.28-9.65h1.01c69.68,0,120.61,4.82,133.02,9.65h.25c3.55,8.57,8.36,47.69,8.36,109.05v1.88h.25Z"
-              />
+          <div class="brand-icon">
+            <svg data-name="logo" class="transition fill-zinc-700 dark:fill-zinc-500 dark:hover:fill-zinc-300" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 288.8 240.13">
+                <path class="txt" d="M194.1,221.3l-21-.1V97.7h21c12.4,0,23,2.7,31.9,8a52.83,52.83,0,0,1,20.4,22c.54,1.08,1,2.18,1.51,3.29l37.93-17.66c-.56-1.15-1.14-2.3-1.74-3.43a88.12,88.12,0,0,0-34.5-35.3c-15.2-8.7-33-13.1-53.6-13.1H132.6V257.7h56.65l31.94-41.86C213.39,219.46,204.33,221.3,194.1,221.3Z" transform="translate(-132.6 -61.5)"></path>
+                <path class="txt" d="M343.5,140.3a62.34,62.34,0,0,1,26.2,5.6,55.57,55.57,0,0,1,20.2,15.8l31.2-24.4A97.24,97.24,0,0,0,387,110.1a102,102,0,0,0-36.8-9.65l-35.52,46.77A60.6,60.6,0,0,1,343.5,140.3Z" transform="translate(-132.6 -61.5)"></path>
+                <path class="txt" d="M390.2,240.3A56.82,56.82,0,0,1,369.8,256a63.15,63.15,0,0,1-57.1-2.2,58.29,58.29,0,0,1-21.9-21.9c-.48-.86-.92-1.74-1.36-2.61l-36.2,16.84A100.46,100.46,0,0,0,292.8,288.2c42.7,24.6,97.1,14.6,128.6-23.5Z" transform="translate(-132.6 -61.5)"></path>
+                <polygon class="bolt fill-amber-400" points="192.33 49.08 82.69 100.12 126.04 128.35 80.69 187.78 190.3 136.78 147.07 108.66 192.33 49.08"></polygon>
             </svg>
           </div>
           <span class="fs-5">
@@ -192,7 +143,7 @@ dataLayer = window.dataLayer || [];
 
       <div class="position-relative">
         <hr class="mb-5 mt-0 border-style-dashed">
-        <span class="badge text-bg-secondary fw-medium font-monospace text-uppercase rounded-pill absolute-center">Tag Log</span>
+        <span class="badge text-bg-secondary fw-medium font-monospace text-uppercase absolute-center">Tag Log</span>
       </div>
       
       <div 
@@ -226,7 +177,7 @@ dataLayer = window.dataLayer || [];
 
       <div class="position-relative">
         <hr class="my-5 border-style-dashed">
-        <span class="badge text-bg-secondary fw-medium font-monospace text-uppercase rounded-pill absolute-center">End Tag Log</span>
+        <span class="badge text-bg-secondary fw-medium font-monospace text-uppercase absolute-center">End Tag Log</span>
       </div>
 
       <div class="d-flex align-items-center justify-content-center gap-2 text-center text-muted mt-4">
@@ -235,10 +186,10 @@ dataLayer = window.dataLayer || [];
 
     </main>
 
-    <footer data-testbench-footer x-cloak class="w-100 position-sticky bottom-0 end-0 z-3 d-flex align-items-center justify-content-between bg-white shadow-sm:up border-top border-secondary-subtle text-muted small">
+    <footer data-testbench-footer x-cloak class="w-100 position-sticky bottom-0 end-0 z-3 d-flex align-items-center justify-content-between bg-white border-top border-secondary-subtle text-muted small">
       <div class="px-3" x-data="{year: new Date()}"> 
         &copy; <template x-if="year.getFullYear() > 2024"><span>2024-</span></template><span x-text="year.getFullYear()"></span> 
-        Built by <a href="https://www.derekcavaliero.com" class="hover:text-underline">Derek Cavaliero</a>
+        <a href="https://www.derekcavaliero.com" class="hover:text-underline">Derek Cavaliero</a>
       </div>
       <a
         href="https://github.com/derekcavaliero/SimpleConsent/" target="_blank"
@@ -252,7 +203,7 @@ dataLayer = window.dataLayer || [];
 
   </div>
 
-  <aside data-testbench-console :class="{ 'd-lg-none': ! json_console }" class="d-none d-lg-block w-50 flex-shrink-0 vh-100 d-flex flex-column align-items-stretch justify-content-stretch border-end border-2 bg-gray-700 border-dark">
+  <aside data-testbench-console :class="{ 'd-lg-none': ! json_console }" class="d-none d-lg-block w-50 flex-shrink-0 vh-100 d-flex flex-column align-items-stretch justify-content-stretch border-end border-2 bg-zinc-700 border-dark">
     <div x-data="{label: 'Resolved Config'}" class="h-50 position-relative overflow-hidden border-bottom border-2 border-dark">
       <div 
         data-ace-editor="config"
@@ -262,7 +213,7 @@ dataLayer = window.dataLayer || [];
             Alpine.store('app').setConsoleValue('config', $store.app.configs.resolved);
           });
         })"></div>
-        <code class="position-absolute top-0 end-0 m-3 font-monospace bg-gray-900 fw-medium small px-2 py-1 rounded-1" x-text="label"></code>
+        <code class="position-absolute top-0 end-0 m-3 font-monospace bg-zinc-900 fw-medium small px-2 py-1 rounded-1" x-text="label"></code>
     </div>
     <div x-data="{label: 'dataLayer'}" class="h-50 position-relative overflow-hidden border-bottom border-2 border-dark">
       <div 
@@ -273,7 +224,7 @@ dataLayer = window.dataLayer || [];
             Alpine.store('app').setConsoleValue(label, $store.app.dataLayer);
           });
         })"></div>
-      <code class="position-absolute top-0 end-0 m-3 font-monospace bg-gray-900 fw-medium small px-2 py-1 rounded-1" x-text="label"></code>
+      <code class="position-absolute top-0 end-0 m-3 font-monospace bg-zinc-900 fw-medium small px-2 py-1 rounded-1" x-text="label"></code>
       <a href="./assets/GTM-testbench-default.json" download class="position-absolute bottom-0 end-0 m-3 btn btn-secondary d-inline-flex gap-2 align-items-center">
         <sprite-icon symbol="gtm"></sprite-icon>
         Download Testbench Container

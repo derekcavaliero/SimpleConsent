@@ -1,52 +1,117 @@
 /* Variable Overrides */
 
 :root{
-
-  /* Primary */
-  --wmx-discovery: #072D56;
-  --wmx-midnight-oil: #002244;
-  --wmx-daydream: #009FD4;
-  --wmx-optimism: #46B756;
-  --wmx-optimism-rgb: 70, 183, 86;
-  
-  /* Secondary */
-  --wmx-blank-slate: #2E536C;
-  --wmx-light-blue: #c9ebf6;
-  --wmx-light-blue-hover: #A8DEF0;
-  --wmx-sapphire: #1178A7;
-  --wmx-sapphire-rgb: 17, 120, 167;
-  --wmx-rose: #E0516C;
-  --wmx-teal: #07B2AA;
-  --wmx-grape: #884F9C;
-
-  /* Neutral */
-  --wmx-gray-light: #F4F2ED;
-  --wmx-gray-dark: #5E6468;
+  --color-red-50: oklch(97.1% .013 17.38);
+  --color-red-400: oklch(70.4% .191 22.216);
+  --color-red-500: oklch(63.7% .237 25.331);
+  --color-red-800: oklch(44.4% .177 26.899);
+  --color-red-900: oklch(39.6% .141 25.723);
+  --color-orange-600: oklch(64.6% .222 41.116);
+  --color-amber-100: lab(95.916% -1.21653 23.111);
+  --color-amber-200: lab(91.7203% -.505269 49.9084);
+  --color-amber-300: lab(86.4156% 6.13147 78.3961);
+  --color-amber-400: lab(80.1641% 16.6016 99.2089);
+  --color-amber-500: lab(72.7183% 31.8672 97.9407);
+  --color-amber-600: lab(60.3514% 40.5624 87.1228);
+  --color-amber-700: lab(47.2709% 42.9082 69.2966);
+  --color-amber-800: lab(37.8822% 37.1699 52.2718);
+  --color-amber-900: lab(31.2288% 30.2627 40.0378);
+  --color-amber-950: lab(15.8111% 20.9107 23.3752);
+  --color-yellow-500: oklch(79.5% .184 86.047);
+  --color-emerald-500: oklch(69.6% .17 162.48);
+  --color-teal-50: oklch(98.4% .014 180.72);
+  --color-teal-400: oklch(77.7% .152 181.912);
+  --color-teal-500: oklch(70.4% .14 182.503);
+  --color-teal-600: oklch(60% .118 184.704);
+  --color-cyan-50: oklch(98.4% .019 200.873);
+  --color-cyan-400: oklch(78.9% .154 211.53);
+  --color-cyan-600: oklch(60.9% .126 221.723);
+  --color-cyan-800: oklch(45% .085 224.283);
+  --color-cyan-900: oklch(39.8% .07 227.392);
+  --color-purple-50: oklch(97.7% .014 308.299);
+  --color-purple-400: oklch(71.4% .203 305.504);
+  --color-purple-800: oklch(43.8% .218 303.724);
+  --color-purple-900: oklch(38.1% .176 304.987);
+  --color-gray-50: oklch(98.5% .002 247.839);
+  --color-gray-400: oklch(70.7% .022 261.325);
+  --color-gray-500: oklch(55.1% .027 264.364);
+  --color-gray-600: oklch(44.6% .03 256.802);
+  --color-gray-800: oklch(27.8% .033 256.848);
+  --color-gray-900: oklch(21% .034 264.665);
+  --color-zinc-50: oklch(98.5% 0 0);
+  --color-zinc-100: oklch(96.7% .001 286.375);
+  --color-zinc-200: oklch(92% .004 286.32);
+  --color-zinc-200-rgb: 224, 224, 231;
+  --color-zinc-300: oklch(87.1% .006 286.286);
+  --color-zinc-400: oklch(70.5% .015 286.067);
+  --color-zinc-500: oklch(55.2% .016 285.938);
+  --color-zinc-600: oklch(44.2% .017 285.786);
+  --color-zinc-700: oklch(37% .013 285.805);
+  --color-zinc-800: oklch(27.4% .006 286.033);
+  --color-zinc-900: oklch(21% .006 285.885);
+  --color-black: #000;
+  --color-white: #fff;
 
   /* Bootstrap Overrides */
 
-  --bs-primary-rgb: var(--wmx-sapphire-rgb);
-  
-  
-  --bs-gray-700: #282c34;
-  --bs-gray-900: #1B1D23;
-  --bs-gray-900-rgb: 27, 29, 35;
+  --bs-primary-rgb: 8, 145, 178;
+
+  --bs-gray-700: var(--color-zinc-700);
+  --bs-gray-900: var(--color-zinc-800);
+  --bs-gray-900-rgb: 24, 24, 27;
   --bs-dark-rgb: var(--bs-gray-900-rgb);
 
-  --bs-green: var(--wmx-optimism);
-  --bs-success-rgb: var(--wmx-optimism-rgb);
+  --bs-green: var(--color-emerald-500);
+  --bs-success-rgb: 16, 185, 129;
 
-  --bs-font-sans-serif: proxima-nova, sans-serif;
-  --bs-font-monospace: fira-code, monospace;
+  --bs-font-sans-serif: "Berkeley Mono Variable", monospace;
+  --bs-font-monospace: "Berkeley Mono Variable", monospace;
   --bs-body-font-family: var(--bs-font-sans-serif);
 
-  --bs-heading-color: var(--wmx-discovery);
-  --bs-body-color: var(--wmx-blank-slate);
-  --bs-link-color: var(--wmx-daydream);
-  --bs-code-color: var(--wmx-optimism);
+  --bs-heading-color: var(--color-zinc-800);
+  --bs-body-color: var(--color-zinc-700);
+  --bs-link-color: var(--color-cyan-600);
+  --bs-code-color: var(--color-cyan-400);
+
+  --bs-border-radius: 0;
 
   --bs-backdrop-opacity: 0.65;
+
+  /* Consent Banner */
+  --consent-border-radius: var(--bs-border-radius) !important;
+  --consent-button-border-radius: var(--consent-border-radius) !important;
   
+}
+
+@font-face {
+  font-family: "Berkeley Mono Variable";
+  src: 
+    url("fonts/BerkeleyMonoVariable.woff2") 
+    format('woff2');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+.fill-zinc-700 {
+  fill: var(--color-zinc-700);
+}
+
+.text-zinc-800 {
+  color: var(--color-zinc-800);
+}
+
+.fill-amber-400 {
+  fill: var(--color-amber-400);
+}
+
+.bg-zinc-50 {
+  background-color: var(--color-zinc-50);
+}
+.bg-zinc-700 {
+  background-color: var(--color-zinc-700);
+}
+.bg-zinc-900 {
+  background-color: var(--color-zinc-900);
 }
 
 [data-consent-placement*="bottom"]{
@@ -60,7 +125,7 @@
 /* Body/Containers */
 
 body {
-  background-color: #F4F2ED;
+  background-color: var(--color-zinc-100);
 }
 .container{
   max-width: 864px;
@@ -73,7 +138,7 @@ body {
   display: inline-flex;
   align-items: center;
 }
-.brand-icon::after{
+/* .brand-icon::after{
   content: '';
   position: absolute;
   left: 0;
@@ -86,17 +151,17 @@ body {
   background-size: cover;
   background-image: url(ios-icon-mask-border.svg);
   z-index: 2;
-}
+} */
 
 .brand-icon svg{
   z-index: 1;
   height: 2.75rem;
 }
 
-.brand-icon svg{
+/* .brand-icon svg{
   mask-image: url(ios-icon-mask.svg);
   mask-size: cover;
-}
+} */
 
 /* Text */
 
@@ -178,13 +243,13 @@ body {
 .input-group-text{
   /* min-width: 4.15rem; */
   justify-content: center;
-  color: var(--wmx-discovery);
-  background: var(--wmx-gray-light);
+  color: var(--color-zinc-700);
+  background: var(--color-zinc-100);
 }
 
 .form-check-input:checked{
-  background-color: var(--wmx-blank-slate);
-  border-color: var(--wmx-blank-slate);
+  background-color: var(--color-cyan-600);
+  border-color: var(--color-cyan-600);
 }
 
 .bg-dark .form-control.bg-transparent{
@@ -215,7 +280,7 @@ body {
 /* Tooltips */
 
 .tooltip{
-  --bs-tooltip-bg: var(--wmx-midnight-oil);
+  --bs-tooltip-bg: var(--color-zinc-800);
 }
 
 /* Icons */
@@ -234,26 +299,26 @@ body {
 }
 
 .btn-secondary{
-  --bs-btn-bg: var(--wmx-light-blue);
-  --bs-btn-color: var(--wmx-discovery);
-  --bs-btn-border-color: #96D8ED;
-  --bs-btn-hover-bg: var(--wmx-light-blue-hover);
-  --bs-btn-hover-color: var(--wmx-discovery);
-  --bs-btn-hover-border-color: #73CCE7;
+  --bs-btn-bg: var(--color-amber-200);
+  --bs-btn-color: var(--color-amber-800);
+  --bs-btn-border-color: var(--color-amber-500);
+  --bs-btn-hover-bg: var(--color-amber-300);
+  --bs-btn-hover-color: var(--color-amber-900);
+  --bs-btn-hover-border-color: var(--color-amber-600);
   --bs-btn-focus-shadow-rgb: 203, 235, 246;
-  --bs-btn-active-bg: var(--wmx-light-blue-hover);
-  --bs-btn-active-color: var(--wmx-discovery);
-  --bs-btn-active-border-color: var(--wmx-light-blue-hover);
+  --bs-btn-active-bg: var(--color-amber-300);
+  --bs-btn-active-color: var(--color-amber-900);
+  --bs-btn-active-border-color: var(--color-amber-600);
 }
 
 .btn-primary{
-  --bs-btn-bg: var(--wmx-blank-slate);
-  --bs-btn-border-color: var(--wmx-discovery);
-  --bs-btn-hover-bg: var(--wmx-discovery);
-  --bs-btn-hover-border-color: var(--wmx-midnight-oil);
+  --bs-btn-bg: var(--color-zinc-700);
+  --bs-btn-border-color: var(--color-zinc-800);
+  --bs-btn-hover-bg: var(--color-zinc-800);
+  --bs-btn-hover-border-color: var(--color-zinc-900);
   --bs-btn-focus-shadow-rgb: 155, 189, 212;
-  --bs-btn-active-bg: var(--wmx-midnight-oil);
-  --bs-btn-active-border-color: var(--wmx-midnight-oil);
+  --bs-btn-active-bg: var(--color-zinc-800);
+  --bs-btn-active-border-color: var(--color-zinc-900);
 }
 
 .btn-icon{
@@ -388,13 +453,13 @@ body {
   font-size: 0.9rem !important;
 }
 .ace_variable{
-  color: #76d9e6 !important;
+  color: var(--color-cyan-400) !important;
 }
 .ace_string{
-  color: #e6d06c !important;
+  color: var(--color-amber-300) !important;
 }
 .ace_boolean{
-  color: #a77afe !important;
+  color: var(--color-purple-400) !important;
 }
 
 .ace_line .ace_fold{
@@ -402,7 +467,7 @@ body {
   background-repeat: no-repeat !important;
   background-size: contain !important;
   background-position: center !important;
-  background-color: #0284c7 !important;
+  background-color: var(--color-cyan-600) !important;
   border: 0 !important;
   height: 1rem !important;
   width: 1.75rem !important;
