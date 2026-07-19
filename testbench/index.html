@@ -40,57 +40,59 @@ dataLayer = window.dataLayer || [];
       <form data-testbench-controls x-data class="d-flex align-items-center justify-content-between gap-3">
         
         <h1 class="brand d-flex align-items-center gap-3 my-0 fw:800 lh-sm">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            xmlns:xlink="http://www.w3.org/1999/xlink"
-            viewBox="0 0 512 512"
-            class="brand-icon aspect:1/1"
-          >
-            <defs>
-              <style>
-                .gradient\:optimistic\/daydream {
-                  fill: url(#gradient-optimistic-daydream);
-                }
-                .gradient\:midnight\/discovery {
-                  fill: url(#gradient-midnight-discovery);
-                }
-              </style>
-              <linearGradient 
-                id="gradient-midnight-discovery" 
-                x1="-46.26" 
-                y1="430.51" 
-                x2="558.26" 
-                y2="81.49" 
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop offset="0" stop-color="#024"/>
-                <stop offset="1" stop-color="#072d56"/>
-              </linearGradient>
-              <linearGradient
-                id="gradient-optimistic-daydream"
-                x1="-46.26"
-                y1="430.51"
-                x2="558.26"
-                y2="81.49"
-                gradientUnits="userSpaceOnUse"
-              >
-                <stop offset="0" stop-color="#009fd4" />
-                <stop offset="1" stop-color="#46b756" />
-              </linearGradient>
-            </defs>
-            <rect
-              class="gradient:optimistic/daydream"
-              x=".5"
-              y=".5"
-              width="511"
-              height="511"
-            />
-            <path d="m511,1v510H1V1h510m1-1H0v512h512V0h0Z" />
-            <path
-              fill="#ffffff"
-              d="m411.76,131.04c-3.31-4.61-8.39-8.19-13.99-9.73l.76.26c-17.29-6.15-65.86-9.47-113.67-10.24h-64.08c-45.77,1.28-90.79,4.35-107.57,10.24l.76-.26c-5.59,1.54-10.68,5.12-13.99,9.73-12.97,17.93-13.99,97.82-13.99,121.89v5.89c0,24.33,1.02,104.22,14.24,121.89,3.31,4.61,8.39,8.2,13.99,9.73l-.76-.25c20.85,7.17,86.46,10.5,142.15,10.5h.76c55.69,0,121.3-3.33,142.15-10.5l-.76.25c5.59-1.54,10.68-5.12,13.99-9.73,13.22-17.67,14.24-97.82,14.24-121.89v-5.89c0-24.07-1.02-103.97-14.24-121.89Zm-12.03,129.79c0,58.45-4.81,95.72-8.36,103.89l-.25.25c-12.67,4.34-63.6,9.19-133.02,9.19h-1.01c-21.03,0-40.29-.51-57.52-1.28-2.53-2.81-5.07-5.61-7.6-7.91,1.01-3.06,2.03-6.13,2.79-9.19.76-3.06,1.27-6.38,1.27-9.44,5.07-1.28,10.39-3.06,15.46-5.11-.25-3.06-.25-6.13-.76-9.19-5.32-1.53-10.64-2.55-16.22-3.32-.76-3.06-1.77-6.13-2.79-9.19-1.27-2.81-2.53-5.87-4.31-8.42,3.55-4.34,6.84-8.68,9.63-13.53-1.77-2.55-3.8-4.85-5.83-6.89-5.32,1.79-10.39,4.34-14.95,7.15-2.28-2.04-4.81-4.08-7.6-5.62-2.53-1.79-5.57-3.06-8.36-4.34.51-5.36.51-10.98,0-16.59-2.79-.77-5.57-1.53-8.61-2.04-3.04,4.85-5.83,9.7-8.11,14.8-3.04-.26-6.08-.26-9.37,0-3.04.51-6.08.77-9.12,1.79-2.79-4.85-6.08-9.44-9.38-13.53-.25,0-.51.26-.76.26v-13.62c0-61.35,4.81-100.47,8.36-109.05h.25c12.67-4.55,63.6-9.65,133.28-9.65h1.01c69.68,0,120.61,4.82,133.02,9.65h.25c3.55,8.57,8.36,47.69,8.36,109.05v1.88h.25Z"
-            />
-          </svg>
+          <div class="brand-icon aspect:1/1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              xmlns:xlink="http://www.w3.org/1999/xlink"
+              viewBox="0 0 512 512"
+              class="aspect:1/1"
+            >
+              <defs>
+                <style>
+                  .gradient\:optimistic\/daydream {
+                    fill: url(#gradient-optimistic-daydream);
+                  }
+                  .gradient\:midnight\/discovery {
+                    fill: url(#gradient-midnight-discovery);
+                  }
+                </style>
+                <linearGradient 
+                  id="gradient-midnight-discovery" 
+                  x1="-46.26" 
+                  y1="430.51" 
+                  x2="558.26" 
+                  y2="81.49" 
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0" stop-color="#024"/>
+                  <stop offset="1" stop-color="#072d56"/>
+                </linearGradient>
+                <linearGradient
+                  id="gradient-optimistic-daydream"
+                  x1="-46.26"
+                  y1="430.51"
+                  x2="558.26"
+                  y2="81.49"
+                  gradientUnits="userSpaceOnUse"
+                >
+                  <stop offset="0" stop-color="#009fd4" />
+                  <stop offset="1" stop-color="#46b756" />
+                </linearGradient>
+              </defs>
+              <rect
+                class="gradient:optimistic/daydream"
+                x=".5"
+                y=".5"
+                width="511"
+                height="511"
+              />
+              <path d="m511,1v510H1V1h510m1-1H0v512h512V0h0Z" />
+              <path
+                fill="#ffffff"
+                d="m411.76,131.04c-3.31-4.61-8.39-8.19-13.99-9.73l.76.26c-17.29-6.15-65.86-9.47-113.67-10.24h-64.08c-45.77,1.28-90.79,4.35-107.57,10.24l.76-.26c-5.59,1.54-10.68,5.12-13.99,9.73-12.97,17.93-13.99,97.82-13.99,121.89v5.89c0,24.33,1.02,104.22,14.24,121.89,3.31,4.61,8.39,8.2,13.99,9.73l-.76-.25c20.85,7.17,86.46,10.5,142.15,10.5h.76c55.69,0,121.3-3.33,142.15-10.5l-.76.25c5.59-1.54,10.68-5.12,13.99-9.73,13.22-17.67,14.24-97.82,14.24-121.89v-5.89c0-24.07-1.02-103.97-14.24-121.89Zm-12.03,129.79c0,58.45-4.81,95.72-8.36,103.89l-.25.25c-12.67,4.34-63.6,9.19-133.02,9.19h-1.01c-21.03,0-40.29-.51-57.52-1.28-2.53-2.81-5.07-5.61-7.6-7.91,1.01-3.06,2.03-6.13,2.79-9.19.76-3.06,1.27-6.38,1.27-9.44,5.07-1.28,10.39-3.06,15.46-5.11-.25-3.06-.25-6.13-.76-9.19-5.32-1.53-10.64-2.55-16.22-3.32-.76-3.06-1.77-6.13-2.79-9.19-1.27-2.81-2.53-5.87-4.31-8.42,3.55-4.34,6.84-8.68,9.63-13.53-1.77-2.55-3.8-4.85-5.83-6.89-5.32,1.79-10.39,4.34-14.95,7.15-2.28-2.04-4.81-4.08-7.6-5.62-2.53-1.79-5.57-3.06-8.36-4.34.51-5.36.51-10.98,0-16.59-2.79-.77-5.57-1.53-8.61-2.04-3.04,4.85-5.83,9.7-8.11,14.8-3.04-.26-6.08-.26-9.37,0-3.04.51-6.08.77-9.12,1.79-2.79-4.85-6.08-9.44-9.38-13.53-.25,0-.51.26-.76.26v-13.62c0-61.35,4.81-100.47,8.36-109.05h.25c12.67-4.55,63.6-9.65,133.28-9.65h1.01c69.68,0,120.61,4.82,133.02,9.65h.25c3.55,8.57,8.36,47.69,8.36,109.05v1.88h.25Z"
+              />
+            </svg>
+          </div>
           <span class="fs-5">
             SimpleConsent 
             <span class="d-block fw-medium smaller text-muted">
@@ -237,11 +239,9 @@ dataLayer = window.dataLayer || [];
       <div class="px-3" x-data="{year: new Date()}"> 
         &copy; <template x-if="year.getFullYear() > 2024"><span>2024-</span></template><span x-text="year.getFullYear()"></span> 
         Built by <a href="https://www.derekcavaliero.com" class="hover:text-underline">Derek Cavaliero</a>
-        @ <a href="https://www.webmechanix.com" class="hover:text-underline">WebMechanix</a>,
-        a <a href="https://www.level.agency" class="hover:text-underline">Level Agency</a>
       </div>
       <a
-        href="https://github.com/WebMechanix/SimpleConsent/" target="_blank"
+        href="https://github.com/derekcavaliero/SimpleConsent/" target="_blank"
         class="d-inline-flex gap-1 align-items-center p-3 bg-black fw-bold lh-1 text-white text-decoration-none hocus:text-optimism transition:color">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 16 16">
           <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"/>
