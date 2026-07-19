@@ -645,7 +645,7 @@ class SimpleConsent {
     this.#bindImplicitActions();
     
     this.#maybeLocalize();
-    this.#mount();
+    this.mount();
 
     if (typeof this.#config.onInit == 'function') {
       this.#config.onInit(this.#settings);
@@ -1084,11 +1084,11 @@ class SimpleConsent {
    * 
    * @returns {void}
    */
-  #mount() {
+  mount() {
 
     this.#mountStyles();
 
-    const root = document.createElement('div');
+    const root = document.getElementById(this.#config.ui.rootId) || document.createElement('div');
     root.id = this.#config.ui.rootId;
     
     root.className = this.#config.ui.rootClass;
