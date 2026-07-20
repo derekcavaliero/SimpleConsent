@@ -1,5 +1,8 @@
 # SimpleConsent.js
 
+[![JS GZip Size](https://img.badgesize.io/derekcavaliero/simpleconsent/main/dist/SimpleConsent.min.js?compression=gzip&label=JS%20GZip%20size)](https://github.com/derekcavaliero/simpleconsent/blob/main/dist/SimpleConsent.min.js)
+[![CSS GZip Size](https://img.badgesize.io/derekcavaliero/simpleconsent/main/dist/SimpleConsent.min.css?compression=gzip&label=CSS%20GZip%20size)](https://github.com/derekcavaliero/simpleconsent/blob/main/dist/SimpleConsent.min.css)
+
 <img src="docs/images/ui-display.png" width=830 style="margin: 0 auto; display: block;" />
 
 ---
@@ -33,7 +36,7 @@
 ---
 
 > [!IMPORTANT]
-> **⚖️ Legal Disclaimer** \
+> **⚖️ Legal Disclaimer** 
 > The maintainers of this library are not data-privacy lawyers, and this library's defaults and/or example configurations may not meet your specific legal requirements and are **NOT a substitute for proper legal counsel**. 
 > 
 > This library is a tool, installing this library on your website(s) WILL NOT "magically" make it compliant with regional data collection laws - it (and Google Tag Manager) must be configured properly to adhere to opt-in/opt-out consent logic. This is true for any consent management tool/platform, they cannot guarantee compliance (and - if they say otherwise - they're lying to you).
