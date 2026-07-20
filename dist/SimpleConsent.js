@@ -3,7 +3,7 @@
  * 
  * Author: Derek Cavaliero (@derekcavaliero)
  * Repository: https://github.com/derekcavaliero/SimpleConsent
- * Version: 1.0.0-alpha.4
+ * Version: 1.0.0-alpha.5
  * License: MIT
  */
 class SimpleConsent {
@@ -12,8 +12,9 @@ class SimpleConsent {
 
   #_geo = null;
   #_multiConfig = null;
+  #_name = 'SimpleConsent';
   #_namespace = 'simple-consent';
-  #_version = '1.0.0-alpha.4';
+  #_version = '1.0.0-alpha.5';
   
   /**
    * A list of actions that are available to the user through the use of buttons added to the consent UI.
@@ -1286,7 +1287,7 @@ class SimpleConsent {
         a.setAttribute('data-consent-branding', '');
         a.href = 'https://github.com/derekcavaliero/SimpleConsent/';
         a.target = '_blank';
-        a.textContent = `${this.#class}`;
+        a.textContent = `${this.#_name}`;
         target.appendChild(a);
       }
 

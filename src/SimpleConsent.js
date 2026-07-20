@@ -12,6 +12,7 @@ class SimpleConsent {
 
   #_geo = null;
   #_multiConfig = null;
+  #_name = 'SimpleConsent';
   #_namespace = 'simple-consent';
   #_version = '{{package.version}}';
   
@@ -1286,7 +1287,7 @@ class SimpleConsent {
         a.setAttribute('data-consent-branding', '');
         a.href = 'https://github.com/derekcavaliero/SimpleConsent/';
         a.target = '_blank';
-        a.textContent = `${this.#class}`;
+        a.textContent = `${this.#_name}`;
         target.appendChild(a);
       }
 
