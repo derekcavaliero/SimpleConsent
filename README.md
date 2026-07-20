@@ -8,7 +8,7 @@
 ---
 
 > [!WARNING] 
-> **This project is in active development.** \
+> **This project is in active development.**
 > A proper release will be tagged when ready. There are likely bugs and missing features at this point in time.
 > #### v1.0 Roadmap
 > - [ ] Ensure A11y for Banner and Modal UI (in progress)
