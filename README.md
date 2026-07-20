@@ -15,8 +15,8 @@
 > - [ ] Setup E2E Testing via Cypress (in progress)
 > - [x] Global Privacy Control Support
 > - [x] Google Consent Mode (v1 & 2) Support (in QA)
-> - [ ] Deploy Testbench (in QA)
-> - [ ] Test Default CSS (in progress)
+> - [x] Deploy Testbench
+> - [x] Test Default CSS
 > - [x] Localization Support
 > - [x] Document Installation
 > - [x] Document Basic Configuration
@@ -27,6 +27,7 @@
 > - [x] Provide Sample GTM Container Export
 > - [ ] Document Callbacks & Custom Events
 > - [ ] Document CSS Customization
+> - [x] Register on NPM `npm install @derekcavaliero/simple-consent`
 
 ---
 
